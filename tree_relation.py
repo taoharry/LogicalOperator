@@ -132,6 +132,9 @@ class TreeRelation(object):
         results = find.findall(rule)
 
         record[dept] = rule
+        if len(results) == 0 and len(priority) == 0:
+            priority.append(rule)
+            return priority, record
 
         if len(results) == 1:
             priority.append(rule)
