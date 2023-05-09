@@ -106,7 +106,7 @@ class TreeRelation(object):
     def parser_rule(self, rule: str, dept: int, priority: List[str], record: Dict[int, str]) -> Tuple[
         List[str], Dict[int, str]]:
         record[dept] = rule
-        _complex = r'\([\&\|\!\=\+\*a-z0-9\ ]*?\)'
+        _complex = r'\([\u4e00-\u9fa5\&\|\!\=\+\*a-zA-Z0-9\ ]*?\)'
         find = re.compile(_complex)
         results = find.findall(rule)
         print("运行第", dept, "层 result = ", results)
